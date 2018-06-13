@@ -1,0 +1,31 @@
+<div >
+    <h1 style="text-align:center;"> Users </h1>
+</div>
+
+<div class="row" style="text-align:center;">
+<button class="button-logout" routerLink="/login"  routerLinkActive="active">Logout</button>
+<button class="button-add" routerLink="/addUser"  routerLinkActive="active"> Add </button>
+</div>
+
+<div class="row" style="text-align:center;">
+<table id="user">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Profile Image</th>
+        <th>Date of Birth</th>
+        <th>Status</th>
+    </tr>
+  <tr *ngFor="let user of users">
+      <td> {{ user.firstname }} </td>
+      <td> {{ user.lastname }} </td>
+      <td> {{ user.email }} </td>
+      <td> {{ user.gender }} </td>
+      <td> {{ user.profileImage }} </td>
+      <td> {{ user.dob }} </td>
+      <td> {{ user.status }} </td>
+  </tr>
+</table>
+</div>
