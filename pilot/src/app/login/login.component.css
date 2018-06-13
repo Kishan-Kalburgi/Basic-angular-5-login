@@ -1,5 +1,5 @@
 /* Full-width input fields */
-input[type=password], input[type=email] {
+/* input[type=password], input[type=email] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -11,10 +11,10 @@ input[type=password], input[type=email] {
 input[type=password]:focus, input[type=email]:focus {
     background-color: #ddd;
     outline: none;
-}
+} */
 
 /* Set a style for all buttons */
-button {
+/* button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -23,11 +23,11 @@ button {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
-}
+} */
 
 /* padding for login form to make it center */
-.paddingCom {
+/* .paddingCom {
     padding-left: 30em;
     padding-right: 29em;
     padding-top: 6em;
-}
+} */

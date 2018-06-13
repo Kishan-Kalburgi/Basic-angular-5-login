@@ -1,5 +1,5 @@
 /* Table style */
-#user {
+/* #user {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 74%;
@@ -22,10 +22,10 @@
     text-align: left;
     background-color: #4c58af;
     color: white;
-}
+} */
 
 /* Logout btn */
-.button-logout {
+/* .button-logout {
     background-color: rgb(221, 55, 55);
     color: white;
     padding: 14px 20px;
@@ -34,10 +34,10 @@
     cursor: pointer;
     width: 10%;
     opacity: 0.9;
-}
+} */
 
 /* add btn */
-.button-add {
+/* .button-add {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -46,4 +46,4 @@
     cursor: pointer;
     width: 10%;
     opacity: 0.9;
-}
+} */
