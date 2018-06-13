@@ -47,7 +47,7 @@
     width: 10%;
     opacity: 0.9;
 } */
-
+/* Customized CSS to override the bootstrap css */
 .userTable {
     width: 80%;
 }
