@@ -1,12 +1,15 @@
 export class User {
     
-    constructor(
-        public firstname: string,
-        public lastname: string,
-        public email: string,
-        public gender: string,
-        public profileImage: string,
-        public dob: string,
-        public status: string,        
-    ) {}
+    firstName: string;
+    lastName: string;
+    email: string;
+    gender: string;
+    profileImage: string;
+    dob: string;
+    status: string;
+
+    constructor(values: Object = {}) {
+        /*Constructor initialization*/
+        Object.assign(this, values);
+    }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../common/user';
+import { Router } from '@angular/router'
+import { FormsModule }   from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +11,13 @@ import { User } from '../common/user';
 
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+  saveEvent(event) {
+    // this.eventService.saveEvent(event)
+    this.router.navigate(['/users'])
+  }
 }

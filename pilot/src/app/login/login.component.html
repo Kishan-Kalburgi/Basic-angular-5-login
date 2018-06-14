@@ -1,16 +1,16 @@
 <!-- Login form -->
 <div class="loginContainer">
   <h1>Login </h1>
-  <form>
+  <form >
     <div class="form-group">
       <label for="email">Email address:</label><br>
-      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+      <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="email" >
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label><br>
-      <input type="password" class="form-control" id="pwd" name="passowrd" [(ngModel)]="password">
+      <input type="password" class="form-control" id="pwd" name="passowrd" required [(ngModel)]="password" >
     </div>
-    <button class="btn btn-default" routerLink="/users"  routerLinkActive="active">Login</button>
+    <button class="btn btn-default" routerLink="/users"> Login </button>
   </form>
 </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../common/user'
 
 @Component({
   selector: 'app-add-user',
@@ -8,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddUserComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+  gender: any[];
+
+  constructor() { 
+    this.gender = ['Male', 'Female', 'Others'];
+      this.user = new User({
+        firstName: '', 
+        lastName: '',
+        email: '',
+        gender: this.gender[0],
+        profileImage: '',
+        dob: '',
+        status: ''});
+  } 
 
   ngOnInit() {
   }
 
+  onFormSubmit({ value, valid}: { value: User, valid: boolean }) {
+    this.user = value;
+    console.log( this.user);
+    console.log('valid: ' + valid);
+  }
 }
