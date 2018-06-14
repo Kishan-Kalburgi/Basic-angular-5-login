@@ -11,12 +11,17 @@ import { FormsModule }   from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  user: User;
+
+  constructor(private router:Router) { 
+    this.user = new User({
+      email: ''})
+}
 
   ngOnInit() {
   }
 
-  saveEvent(event) {
+  onLogin(login) {
     // this.eventService.saveEvent(event)
     this.router.navigate(['/users'])
   }

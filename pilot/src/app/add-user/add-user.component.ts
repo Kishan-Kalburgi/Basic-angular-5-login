@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../common/user'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-add-user',
@@ -12,7 +13,7 @@ export class AddUserComponent implements OnInit {
   user: User;
   gender: any[];
 
-  constructor() { 
+  constructor(private router:Router) { 
     this.gender = ['Male', 'Female', 'Others'];
       this.user = new User({
         firstName: '', 
@@ -22,6 +23,7 @@ export class AddUserComponent implements OnInit {
         profileImage: '',
         dob: '',
         status: ''});
+
   } 
 
   ngOnInit() {
@@ -31,5 +33,6 @@ export class AddUserComponent implements OnInit {
     this.user = value;
     console.log( this.user);
     console.log('valid: ' + valid);
+    this.router.navigate(['/users'])
   }
 }
