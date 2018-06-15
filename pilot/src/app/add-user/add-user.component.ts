@@ -12,9 +12,11 @@ export class AddUserComponent implements OnInit {
 
   user: User;
   gender: any[];
+  status: any[];
 
   constructor(private router:Router) { 
     this.gender = ['Male', 'Female', 'Others'];
+    this.status = ['Active', 'Inactive'];
       this.user = new User({
         firstName: '', 
         lastName: '',
@@ -22,8 +24,8 @@ export class AddUserComponent implements OnInit {
         gender: this.gender[0],
         profileImage: '',
         dob: '',
-        status: ''});
-
+        status: this.status[0]
+      });
   } 
 
   ngOnInit() {
