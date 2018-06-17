@@ -16,4 +16,9 @@ export class DataService {
         //   http call
         return this.http.post("https://pilot-project-api-gdp.herokuapp.com/api/user/signup", data);
     }
+
+    signInUser(data: User) {
+        //   http call
+        return this.http.post("https://pilot-project-api-gdp.herokuapp.com/api/user/signin", data);
+    }
 }

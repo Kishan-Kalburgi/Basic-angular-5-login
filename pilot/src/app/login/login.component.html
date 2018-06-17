@@ -1,44 +1,41 @@
 <!-- Login form -->
 <div class="loginContainer">
   <h1>Login </h1>
-  <form novalidate (ngSubmit)="onLogin(login)" #loginForm="ngForm">
+  <form novalidate (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm">
 
     <div class="form-group">
       <label for="email">
-        <b>Email</b>  
-      </label> {{ email.valid}}
+        <b>Email</b>
+      </label>
       <input type="text" class="form-control" [ngModel]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
       <!-- Email error block -->
-      <div *ngIf="email.invalid && ( email.touched)" class="col-sm-3 text-danger">
+      <div *ngIf="(email.invalid && ( email.touched || email.dirty)) || isSubmitted" class="col-sm-6 text-danger">
         <div *ngIf="email.errors?.required">
-          Email field can't be blank
+          Please enter the email id
         </div>
-        <div *ngIf="email.errors?.pattern && email.touched">
-          The email id doesn't seem right
+        <div *ngIf="email.errors?.pattern &&  email.dirty">
+            Please enter the valid email id
         </div>
       </div>
-    </div>
 
-    <!-- Password block -->
-    <div ngModelGroup="password" #userPassword="ngModelGroup">
-      <div class="form-group ">
-        <label for="inputPassword">
-          <b>Password</b>
-        </label>
-        <input type="password" class="form-control" ngModel name="pwd" id="inputPassword" placeholder="Password" minlength="6" required>
+      <!-- Password block -->
+      <label for="password">
+        <b>Password</b>
+      </label>
+      <input type="password" class="form-control" [ngModel]="user.password" name="password" #password="ngModel" id="inputpassword"
+        placeholder="Password" minlength="6" required>
+      <!-- password error block -->
+      <div *ngIf="(password.invalid && ( password.touched || password.dirty)) || isSubmitted" class="col-sm-6 text-danger">
+        <div *ngIf="password.errors?.required">
+          Please enter the password
+        </div>
+        <div *ngIf="password.errors?.minlength && password.dirty">
+          Password must have mininmum 6 characters.
+        </div>
+      </div>
       </div>
 
-
-      <!-- Password error block -->
-      <!-- <div *ngIf="(userPassword.invalid|| userPassword.value?.pwd != userPassword.value?.confirmPwd) && (userPassword.touched)"
-        class="col-sm-3 text-danger">
-        <ng-template #nomatch>
-          Invalide username/password
-        </ng-template>
-      </div> -->
-    </div> 
-
-    <button class="btn btn-primary" [disabled]="!loginForm.form.valid" routerLink="/users"> Login </button>
+      <button class="btn btn-primary"> Login </button>
   </form>
-</div>
+  </div>

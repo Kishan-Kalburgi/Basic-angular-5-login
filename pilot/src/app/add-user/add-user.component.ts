@@ -15,7 +15,7 @@ export class AddUserComponent implements OnInit {
   gender: any[];
   status: any[];
   isSubmitted = false
-  constructor(private dataService: DataService) {
+  constructor(private router: Router, private dataService: DataService) {
     this.gender = ['Male', 'Female', 'Other'];
     this.status = ['ACTIVE', 'INACTIVE'];
     this.user = new User({
@@ -49,12 +49,13 @@ export class AddUserComponent implements OnInit {
       .subscribe((data) =>{
         console.log(data)
         console.log("success")
+        this.router.navigate(['/users'])
       },
       error=>{
         console.log("Error Occured")
       });
 
-   //   this.router.navigate(['/users'])
+ 
       }
       
    
