@@ -4,7 +4,7 @@ export class User {
     lastName: string;
     email: string;
     gender: string;
-    profileImage: string;
+    profileImage?: string;
     dob: string;
     status: string;
 

@@ -62,14 +62,14 @@
             <b>Password</b>
           </label>
           <input type="password" class="form-control" [ngModel]="user.password" name="password" #password="ngModel" id="inputpassword"
-            placeholder="Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+            placeholder="Password" minlength="6" required>
           <!-- password error block -->
           <div *ngIf="(password.invalid && ( password.touched || password.dirty)) || isSubmitted" class="col-sm-6 text-danger">
             <div *ngIf="password.errors?.required">
               Please enter the password
             </div>
-            <div *ngIf="password.errors?.pattern && password.dirty">
-                Password must have mininmum 8 characters. It should contain at least one uppercase, one lowercase,0-9 and specil character.
+            <div *ngIf="password.errors?.minlength && password.dirty">
+                Password must have mininmum 6 characters.
             </div>
           </div>
   

@@ -44,7 +44,7 @@
                     <td> {{ user.email }} </td>
                     <td> {{ user.gender }} </td>
                     <td> {{ user.profileImage }} </td>
-                    <td> {{ user.dob }} </td>
+                    <td> {{ user.dob | date:'MM-dd-yyyy'}} </td>
                     <td> {{ user.status }} </td>
                 </tr>
             </table>

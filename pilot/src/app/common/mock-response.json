@@ -1,0 +1,14 @@
+{
+    "message": "User listfetched succeessfully",
+    "data": [
+        {
+            "status": "ACTIVE",
+            "_id": "5b261bef3735810014bcf9e5",
+            "firstName": "Test",
+            "lastName": "Test",
+            "email": "Test2",
+            "gender": "Male",
+            "dob": "2018-06-17T08:29:35.417Z"
+        }
+    ]
+}

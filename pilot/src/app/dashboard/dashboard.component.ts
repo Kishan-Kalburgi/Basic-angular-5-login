@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../common/user'
 import { USERS } from '../common/mock-users'
+import { DataService } from '../common/dataService';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,11 +10,16 @@ import { USERS } from '../common/mock-users'
 })
 export class DashboardComponent implements OnInit {
 
-  users = USERS;
+  users: User[];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getUserList()
+      .subscribe((data) =>{
+        
+        this.users = data['data'];
+      });
   }
 
 
