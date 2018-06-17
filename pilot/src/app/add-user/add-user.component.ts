@@ -13,28 +13,40 @@ export class AddUserComponent implements OnInit {
   user: User;
   gender: any[];
   status: any[];
-
-  constructor(private router:Router) { 
+  isSubmitted = false
+  constructor(private router: Router) {
     this.gender = ['Male', 'Female', 'Others'];
     this.status = ['Active', 'Inactive'];
-      this.user = new User({
-        firstName: '', 
-        lastName: '',
-        email: '',
-        gender: this.gender[0],
-        profileImage: '',
-        dob: '',
-        status: this.status[0]
-      });
-  } 
+    this.user = new User({
+      firstName: '',
+      lastName: '',
+      email: '',
+      gender: this.gender[0],
+      profileImage: '',
+      dob: '',
+      status: this.status[0]
+    });
+  }
 
   ngOnInit() {
   }
 
-  onFormSubmit({ value, valid}: { value: User, valid: boolean }) {
-    this.user = value;
-    console.log( this.user);
-    console.log('valid: ' + valid);
-    this.router.navigate(['/users'])
+  stringify(item) {
+    return JSON.stringify(item)
+  }
+
+  onFormSubmit({ value, valid }: { value: User, valid: boolean }) {
+      this.isSubmitted = true
+      this.user = value;
+      console.log(this.user);
+      console.log('valid: ' + valid);
+      if(valid){
+        this.user = value;
+      console.log(this.user);
+      console.log('valid: ' + valid);
+   //   this.router.navigate(['/users'])
+      }
+      
+   
   }
 }
